@@ -5,8 +5,8 @@
     
     <entry>
       <title>Hello Hexo</title>
-      <link href="/2024-12-20-Hello-Hexo.html"/>
-      <url>/2024-12-20-Hello-Hexo.html</url>
+      <link href="/2024-12-20-hello-hexo.html"/>
+      <url>/2024-12-20-hello-hexo.html</url>
       
         <content type="html"><![CDATA[<h2 id="你好-Hexo"><a href="#你好-Hexo" class="headerlink" title=" 你好 Hexo"></a><i class="fab fa-fort-awesome-alt"></i> 你好 Hexo</h2><p>第一篇博客测试.</p><span id="more"></span><p>这里是在主页被隐藏的内容…</p><div style = "text-align: center; margin: auto; width: 100%;"><p><img src="/../images/fog.jpg" alt="Fog"></p></div>]]></content>
       
