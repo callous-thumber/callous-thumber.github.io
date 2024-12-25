@@ -1,3 +1,5 @@
+https://callous-thumber.github.io/bb/index.html
+https://callous-thumber.github.io/2024-12-25-jian-zhan-ji-lu.html
 https://callous-thumber.github.io/2024-12-20-hello-hexo.html
 https://callous-thumber.github.io/2024-12-20-hello-world.html
 https://callous-thumber.github.io/404/index.html
@@ -9,4 +11,5 @@ https://callous-thumber.github.io/categories/index.html
 https://callous-thumber.github.io/
 https://callous-thumber.github.io/tags/Hexo/
 https://callous-thumber.github.io/categories/Blog/
+https://callous-thumber.github.io/categories/uncategorized/
 https://callous-thumber.github.io/categories/Blog/Hexo/
