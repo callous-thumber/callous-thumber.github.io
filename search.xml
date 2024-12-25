@@ -8,7 +8,7 @@
       <link href="/2024-12-25-jian-zhan-ji-lu.html"/>
       <url>/2024-12-25-jian-zhan-ji-lu.html</url>
       
-        <content type="html"><![CDATA[<span id="more"></span><div style = "text-align: center; margin: auto; width: 100%;"><p><img src="../images/Car.jpg" alt="Car"></p></div>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
       
       <categories>
@@ -17,33 +17,6 @@
           
       </categories>
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello Hexo</title>
-      <link href="/2024-12-20-hello-hexo.html"/>
-      <url>/2024-12-20-hello-hexo.html</url>
-      
-        <content type="html"><![CDATA[<h1><i class="fab fa-fort-awesome-alt"></i> 你好 Hexo</h1><p>第一篇博客测试.</p><span id="more"></span><p>这里是在主页被隐藏的内容…测试内容</p><div style = "text-align: center; margin: auto; width: 100%;"><p><img src="../images/fog.jpg" alt="Fog"></p></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> Blog </category>
-          
-          <category> Hexo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
       
     </entry>
     
