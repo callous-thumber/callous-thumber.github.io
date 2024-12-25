@@ -1,3 +1,4 @@
+https://callous-thumber.github.io/2024-12-20-hello-world.html
 https://callous-thumber.github.io/404/index.html
 https://callous-thumber.github.io/2024-12-20-hello-hexo.html
 https://callous-thumber.github.io/contact/index.html
@@ -5,7 +6,6 @@ https://callous-thumber.github.io/friends/index.html
 https://callous-thumber.github.io/about/index.html
 https://callous-thumber.github.io/tags/index.html
 https://callous-thumber.github.io/categories/index.html
-https://callous-thumber.github.io/2024-12-19-hello-world.html
 https://callous-thumber.github.io/
 https://callous-thumber.github.io/tags/Hexo/
 https://callous-thumber.github.io/categories/Blog/
