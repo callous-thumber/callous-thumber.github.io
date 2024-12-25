@@ -10,5 +10,5 @@ https://callous-thumber.github.io/categories/index.html
 https://callous-thumber.github.io/
 https://callous-thumber.github.io/tags/Hexo/
 https://callous-thumber.github.io/categories/Blog/
-https://callous-thumber.github.io/categories/Blog/Hexo/
 https://callous-thumber.github.io/categories/uncategorized/
+https://callous-thumber.github.io/categories/Blog/Hexo/
