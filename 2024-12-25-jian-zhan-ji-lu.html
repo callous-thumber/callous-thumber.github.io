@@ -22,7 +22,7 @@
     
     <style>
         body{
-            background-image: url(source/images/background.webp);
+            background-image: url(../images/background.webp);
             background-repeat:no-repeat;
             background-size: 100% 100%;
             background-attachment:fixed;
@@ -380,8 +380,12 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/uncategorized/" class="post-category">
-                                uncategorized
+                            <a href="/categories/hexo/" class="post-category">
+                                hexo
+                            </a>
+                        
+                            <a href="/categories/hexo/Matery/" class="post-category">
+                                Matery
                             </a>
                         
                     </div>
@@ -402,14 +406,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    11 分
                 </div>
                 
 
@@ -432,7 +436,164 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p><img src="../images/post_img/hexo_github.png" alt="Hexo+Github" title="Hexo+Github IMG"></p>
+<!-- Github + Hexo 建站记录 -->
+<h1>1. 部署方式及理由</h1>
+<p>当前博客采用Github + Hexo的部署方式，选择基于主题Matery进行开发。</p>
+<h2 id="1-1-博客框架优势">1.1 博客框架优势</h2>
+<blockquote>
+<p>Hexo是一个快速、简单且强大的静态博客框架，之所以选择静态博客,主要原因及优势有以下几点:</p>
+<blockquote>
+<p><strong>1. 速度极快:</strong><br>
+当用户访问博客时，只用从服务器（如nginx）调取编译好的静态资源即可，无需实时从数据库查询获取博文、图片、评论、访问量等资源，效率极高，打开网站的速度会非常快。<br>
+<strong>2.  成本低:</strong><br>
+市面上有很多开源免费的托管程序（如 gayhub；gitee；coding 等），不用担心高昂的服务器费用。<br>
+<strong>3.  使用体验:</strong><br>
+可以避免不必要的系统维护，从而能够更加专注于内容本身的建设。<br>
+<strong>4.  安全性:</strong><br>
+没有数据库、没有后台、完全静态页面，从而避免被数据库注入啊，跨站攻击等网站安全问题。<br>
+而Hexo与GitHub的结合让博客的搭建和发布变得更加简便高效。</p>
+</blockquote>
+</blockquote>
+<p>只需要配置好Hexo项目的发布路径、GitHub仓库链接和分支，每次生成静态页面后，只需要运行命令进行推送，Hexo会自动将生成的文件推送到GitHub仓库。这大大节省了发布博客的时间和精力。</p>
+<p>此外,还可以轻松地利用 Git 的版本控制功能来管理博客内容。这意味着可以随时恢复到以前的版本，查看和比较不同版本之间的更改。</p>
+<h2 id="1-2-主题选择理由">1.2 主题选择理由</h2>
+<p>本博客目前使用的主题是<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery" title="matery_link">Matery</a>,由<a target="_blank" rel="noopener" href="https://github.com/blinkfox">Blinkfox (闪烁之狐) </a>大佬开发，选择的主要原因是因为我对主页设计的第一印象比较好，符合对个人博客的美观的要求。</p>
+<p>出于对作者工作的尊重，还是在下面列举一下该主题主要特性：</p>
+<ul>
+<li>简单漂亮，文章内容美观易读</li>
+<li>Material Design 设计</li>
+<li>响应式设计，博客在桌面端、平板、手机等设备上均能很好的展现</li>
+<li>首页轮播文章及每天动态切换 Banner 图片</li>
+<li>瀑布流式的博客文章列表（文章无特色图片时会有 24 张漂亮的图片代替）</li>
+<li>时间轴式的归档页</li>
+<li>词云的标签页和雷达图的分类页</li>
+<li>丰富的关于我页面（包括关于我、文章统计图、我的项目、我的技能、相册等）</li>
+<li>可自定义的数据的友情链接页面</li>
+<li>支持文章置顶和文章打赏</li>
+<li>支持 MathJax</li>
+<li>支持中文繁简转换</li>
+<li>TOC 目录</li>
+<li>可设置复制文章内容时追加版权信息</li>
+<li>可设置阅读文章时做密码验证</li>
+<li>Gitalk、Gitment、Valine 和 Disqus 评论模块（推荐使用 Gitalk）</li>
+<li>集成了不蒜子统计、谷歌分析（Google Analytics）和文章字数统计等功能</li>
+<li>支持在首页的音乐播放和视频播放功能</li>
+<li>支持emoji表情，用markdown emoji语法书写直接生成对应的能跳跃的表情。</li>
+<li>支持 DaoVoice、Tidio 在线聊天功能。</li>
+</ul>
+<h1>2. 部署过程记录</h1>
+<h2 id="2-1-环境准备">2.1 环境准备</h2>
+<p>本地系统版本：</p>
+<blockquote>
+<p>ProductName:		macOS<br>
+ProductVersion:		13.3.1</p>
+</blockquote>
+<p>即以下操作指令为在<code>MacOS</code>下的操作指令，对应不同系统可能会略做调整。</p>
+<p>安装 Hexo 首先应当准备好下列应用程序：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn" title="Node.js link">node.js</a> （<a target="_blank" rel="noopener" href="https://hexo.io/docs/" title="hexo doc link">Hexo官方文档</a>表明，Node.js的版本应至少为 10.13, 推荐安装 12.0 或更高版本）</li>
+<li><a target="_blank" rel="noopener" href="https://git-scm.com/" title="git link">git</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/" title="nmp link">nmp</a></li>
+</ul>
+<p>MacOS上，<code>node.js</code>安装指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ brew install node@22</span><br><span class="line"></span><br><span class="line"># verifies the right Node.js version is in the environment  </span><br><span class="line">$node -v     # should print `v22.12.0`</span><br><span class="line"></span><br><span class="line"># verifies the right npm version is in the environment</span><br><span class="line">$npm -v # should print `10.9.0`</span><br></pre></td></tr></table></figure>
+<p>NPM则已经被新版的 <code>Node.js</code> 集成了，而git则默认想要搭建博客的您已经配备。</p>
+<h2 id="问题补充-——针对终端找不到node及npm的问题：">[问题补充]——针对终端找不到node及npm的问题：</h2>
+<p>当运行上述安装指令并查看版本时，有可能出现<code>node: command not found</code>及<code>npm: command not found</code>，解决方案如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 1. 确定使用的Shell</span><br><span class="line">$ echo $SHELL</span><br><span class="line"># 如果输出是 /bin/zsh，则使用 ~/.zshrc；如果是 /bin/bash，则使用 ~/.bashrc。</span><br><span class="line"></span><br><span class="line"># 2. 编辑对应的配置文件</span><br><span class="line">$ nano ~/.zshrc  # 如果是 bash，则运行 nano ~/.bashrc</span><br><span class="line"></span><br><span class="line"># 在文件末尾添加以下内容</span><br><span class="line">$ export PATH=&quot;/usr/local/opt/node@22/bin:$PATH&quot;</span><br><span class="line"></span><br><span class="line"># 3. 保存并退出（Ctrl + O 保存，Ctrl + X 退出）</span><br><span class="line"></span><br><span class="line"># 4. 立即生效配置</span><br><span class="line">$ source ~/.zshrc  # 如果是 bash，则运行 source ~/.bashrc</span><br><span class="line"></span><br><span class="line"># 5. 验证路径是否添加成功</span><br><span class="line">$ echo $PATH</span><br><span class="line">$ which node</span><br><span class="line">$ node -v</span><br><span class="line"></span><br><span class="line"># 6. 重启终端后再次验证</span><br><span class="line">$ which node</span><br><span class="line">$ node -v</span><br></pre></td></tr></table></figure>
+<h2 id="2-2-安装-Hexo">2.2 安装 Hexo</h2>
+<p>所有必备的应用程序安装完成后，即可使用 <code>npm</code>安装 Hexo。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#安装</span><br><span class="line">$ npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line">#检查版本号</span><br><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
+<h3 id="问题补充-——Hexo更新">[问题补充]——Hexo更新</h3>
+<p>为安装下述Hexo主题，建议安装Hexo 5.0.0 及以上的版本，若已经有一个自己的 Hexo 博客了，建议你将 Hexo 升级到最新稳定的版本。更新方式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 升级node.js</span><br><span class="line">npm install npm@latest -g</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 升级Hexo</span><br><span class="line"></span><br><span class="line"># 安装 npm-check 和 npm-upgrade</span><br><span class="line">npm install -g npm-check npm-upgrade</span><br><span class="line"># 检查本地插件版本</span><br><span class="line">npm-check</span><br><span class="line"># 交互式升级，根据提示即可完成升级</span><br><span class="line">npm-upgrade</span><br></pre></td></tr></table></figure>
+<h2 id="2-3-创建博客站点">2.3 创建博客站点</h2>
+<p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h2 id="2-4-下载主题">2.4 下载主题</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git clone https://github.com/blinkfox/hexo-theme-matery.git /app/themes/matery; #这里路径中的app为上述创建的自己的博客文件夹</span><br></pre></td></tr></table></figure>
+<h2 id="2-5-切换主题">2.5 切换主题</h2>
+<p>将Hexo 根目录下的 <code>_config.yml</code> 的 <code>theme</code> 的值：<code>theme: hexo-theme-matery</code></p>
+<blockquote>
+<p><strong>注</strong>：Hexo初始化之后根目录会创建一个<code>_config.yml</code>文件，而在安装主题Matery后，在<code>/博客根目录/themes/</code> 文件夹下也会创建一个<code>_config.yml</code>文件，注意区分。</p>
+</blockquote>
+<h3 id="2-5-1-config-yml文件的其它修改建议">2.5.1 <code>_config.yml</code>文件的其它修改建议</h3>
+<blockquote>
+<p>这里还是指的根目录的<code>_config.yml</code>文件</p>
+</blockquote>
+<ul>
+<li>修改 <code>_config.yml</code> 的 <code>url</code> 的值为自己的网站主 <code>URL</code>（如：<code>http://xxx.github.io</code>）。</li>
+<li>建议修改两个 <code>per_page</code> 的分页条数值为<code>6</code>的倍数，如：<code>12、18</code> 等，这样文章列表在各个屏幕下都能较好的显示。</li>
+<li>如果是中文用户，则建议修改 <code>language</code> 的值为 <code>zh-CN</code>。</li>
+</ul>
+<h2 id="2-6-新建主题必备页面">2.6 新建主题必备页面</h2>
+<h3 id="2-6-1-新建404页">2.6.1 新建404页</h3>
+<p><code>404</code>页是用来告知浏览者其所请求的页面不存在或链接错误，同时引导用户使用网站其他页面而不是关闭窗口离开，消除用户的挫败感的页面。如果 <code>source</code> 目录下还没有 <code>/404/index.md</code>文件，那么就需要新建一个，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo new page &quot;404&quot;</span><br></pre></td></tr></table></figure>
+<p>新建的<code>404</code>页面输入如下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 404</span><br><span class="line">date: #自己的创建日期</span><br><span class="line">type: &quot;404&quot;</span><br><span class="line">layout: &quot;404&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="2-6-2-新建分类categories页">2.6.2 新建分类categories页</h3>
+<p><code>categories</code> 页是用来展示所有分类的页面，如果 <code>source</code> 目录下还没有 <code>categories/index.md</code> 文件，那么就需要新建一个，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo new page &quot;categories&quot;</span><br></pre></td></tr></table></figure>
+<p>编辑你刚刚新建的页面文件 <code>/source/categories/index.md</code>，至少需要以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: #自己的创建日期</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">layout: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="2-6-3-新建标签-tags-页">2.6.3 新建标签 tags 页</h3>
+<p><code>tags</code> 页是用来展示所有标签的页面，如果 <code>source</code> 目录下还没有 <code>tags/index.md</code> 文件，那么就需要新建一个，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo new page &quot;tags&quot;</span><br></pre></td></tr></table></figure>
+<p>编辑你刚刚新建的页面文件 <code>/source/tags/index.md</code>，至少需要以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: #自己的创建日期</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">layout: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="2-6-4-新建关于我-about-页">2.6.4 新建关于我 about 页</h3>
+<p><code>about</code> 页是用来展示关于我和我的博客信息的页面，如果 <code>source</code> 目录下还没有 <code>about/index.md</code> 文件，那么就需要新建一个，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo new page &quot;about&quot;</span><br></pre></td></tr></table></figure>
+<p>编辑你刚刚新建的页面文件 <code>/source/about/index.md</code>，至少需要以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: #自己的创建日期</span><br><span class="line">type: &quot;about&quot;</span><br><span class="line">layout: &quot;about&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="2-7-新建文章模板修改">2.7 新建文章模板修改</h2>
+<p>修改文章模板，每次创建文章之后新文章的<code>Front-matte</code>r以及基本内容会按照模板创建，提高编辑效率。</p>
+<p>建议将<code>/scaffolds/post.md</code>修改为如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">author: </span><br><span class="line">img: </span><br><span class="line">coverImg: </span><br><span class="line">top: false</span><br><span class="line">cover: false</span><br><span class="line">toc: true</span><br><span class="line">mathjax: false</span><br><span class="line">password:</span><br><span class="line">summary:</span><br><span class="line">tags:</span><br><span class="line">categories:</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">这里为基本内容</span><br></pre></td></tr></table></figure>
+<h2 id="2-8-代码高亮">2.8 代码高亮</h2>
+<p>修改 <code>Hexo</code> 根目录下 <code>_config.yml</code> 文件中 <code>highlight</code>.<code>enable</code> 的值为 <code>false</code>，并将 <code>prismjs.enable</code> 的值设置为 <code>true</code>，主要配置如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  enable: false</span><br><span class="line">  line_number: false #初始为true</span><br><span class="line">  auto_detect: false</span><br><span class="line">  tab_replace: &#x27;&#x27;</span><br><span class="line">  wrap: true</span><br><span class="line">  hljs: false</span><br><span class="line">prismjs:</span><br><span class="line">  enable: true</span><br><span class="line">  preprocess: true</span><br><span class="line">  line_number: false #初始为true</span><br><span class="line">  tab_replace: &#x27;&#x27;</span><br></pre></td></tr></table></figure>
+<p>这里作者博客中说的是<code>line_number</code>的值没有改动，但可能会出现<a target="_blank" rel="noopener" href="https://blog.csdn.net/Withdraw_end/article/details/120645255" title="issues_link">issues</a>，如下图所示：</p>
+<p><img src="../images/post_img/building_record/highlight_bug01.jpg" alt="bug_img" title="bug_img"></p>
+<p>因此根据上述链接所示文章，将<code>line_number</code>的值改为<code>false</code>。</p>
+<h2 id="2-9-添加文章搜索功能">2.9 添加文章搜索功能</h2>
+<p>搜索功能需要安装插件，安装命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: true</span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
+<h2 id="2-10-文章链接转静态短地址">2.10 文章链接转静态短地址</h2>
+<p>如果文章名称是中文的，那么 Hexo 默认生成的永久链接也会有中文，这样不利于 <code>SEO</code>，且 <code>gitment</code> 评论对中文链接也不支持。因此，通过Hexo插件<a target="_blank" rel="noopener" href="https://github.com/viko16/hexo-permalink-pinyin" title="hexo-permalink-pinyin link">hexo-permalink-pinyin</a>生成文章时生成中文拼音的永久链接，运行代码进行安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm i hexo-permalink-pinyin --save</span><br></pre></td></tr></table></figure>
+<p>并且需要在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">permalink_pinyin:</span><br><span class="line">  enable: true</span><br><span class="line">  separator: &#x27;-&#x27; # default: &#x27;-&#x27;</span><br></pre></td></tr></table></figure>
+<h2 id="2-11-添加-emoji-表情支持">2.11 添加 emoji 表情支持</h2>
+<p>使用 <code>hexo-filter-github-emojis</code> 的 Hexo 插件来支持 <code>emoji</code> 表情的生成，把对应的 <code>markdown emoji</code> 语法（ <code>::</code> ,例如：<code>:smile:</code> ）转变成会跳跃的emoji表情，安装命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-filter-github-emojis --save</span><br></pre></td></tr></table></figure>
+<p>同时需要在 Hexo 根目录下的 _config.yml 文件中，新增以下的配置项：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">githubEmojis:</span><br><span class="line">  enable: true</span><br><span class="line">  className: github-emoji</span><br><span class="line">  inject: true</span><br><span class="line">  styles:</span><br><span class="line">  customEmojis:</span><br></pre></td></tr></table></figure>
+<h2 id="2-12-文章字数统计插件">2.12 文章字数统计插件</h2>
+<p>配置Hexo插件，以在文章中显示文章字数、阅读时长信息。安装指令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm i --save hexo-wordcount</span><br></pre></td></tr></table></figure>
+<p>然后只需在<strong>本主题下的</strong> <code>_config.yml</code> 文件中，激活以下配置项即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wordCount:</span><br><span class="line">  enable: false # 将这个值设置为 true 即可.</span><br><span class="line">  postWordCount: true</span><br><span class="line">  min2read: true</span><br><span class="line">  totalCount: true</span><br></pre></td></tr></table></figure>
+<h2 id="2-13-部署轻量级博客评论系统">2.13 部署轻量级博客评论系统</h2>
+<p>Valine 诞生于2017年8月7日，是一款基于<a target="_blank" rel="noopener" href="https://www.leancloud.cn/" title="leancloud link">LeanCloud</a>的快速、简洁且高效的无后端评论系统。</p>
+<p>由于Valine是基于LeanCloud服务的，数据都在LeanCloud存储。因此需要注册个LeanCloud才能使用。下面为基本的注册流程。</p>
+<blockquote>
+<ol>
+<li>在<a target="_blank" rel="noopener" href="https://www.leancloud.cn/" title="leancloud link">LeanCloud</a>用邮箱注册登录，需要实名制认证，邮箱认证。</li>
+<li>创建应用,命名为<code>blog</code>，方案选择开发版，即可以在一定的用量限制下免费运行。</li>
+<li>进入创建好的应用&gt;设置&gt;选择应用 <code>Key</code>，就能获取到 <code>App ID</code> 和 <code>App Key</code>，以待后续使用</li>
+<li>(optional) 如果有自己的域名，还可以进入应用中心绑定你的个人博客域名</li>
+</ol>
+</blockquote>
+<p>在此之后，还需要去主题配置文件<code>_config.yml</code>中进行修改。<br>
+在主题配置找到以下参数进行修改：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Valine.</span><br><span class="line"># You can get your appid and appkey from https://leancloud.cn</span><br><span class="line"># more info please open https://valine.js.org</span><br><span class="line">valine:</span><br><span class="line">  enable: true //打开valine评论功能</span><br><span class="line">  appid: 你的leancloud appid </span><br><span class="line">  appkey: 你的leancloud appkey </span><br><span class="line">  notify: false //邮件提醒</span><br><span class="line">  verify: true //评论时是否有验证码，需要在Leancloud 设置-&gt;安全中心 中打开</span><br><span class="line">  placeholder: 说点什么吧！ //评论框默认显示</span><br><span class="line">  avatar: hide //评论者的头像,我这里设置的不显示</span><br><span class="line">  guest_info: nick # custom comment header</span><br><span class="line">  pageSize: 10 # pagination size</span><br></pre></td></tr></table></figure>
+<p>到这里，一个基本的博客便创建完成。</p>
+
                 
             </div>
             <hr/>
@@ -866,8 +1027,12 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/uncategorized/" class="post-category">
-                                    uncategorized
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
+                                </a>
+                            
+                            <a href="/categories/hexo/Matery/" class="post-category">
+                                    Matery
                                 </a>
                             
                             
@@ -937,6 +1102,43 @@
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: callous-thumber&#39;s Blog<br />'
+            + '文章作者: hj_liang<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->
