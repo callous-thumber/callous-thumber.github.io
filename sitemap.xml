@@ -101,20 +101,6 @@
 
   
   <url>
-    <loc>https://callous-thumber.github.io/categories/Blog/</loc>
-    <lastmod>2024-12-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://callous-thumber.github.io/categories/Blog/Hexo/</loc>
-    <lastmod>2024-12-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://callous-thumber.github.io/categories/hexo/</loc>
     <lastmod>2024-12-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -122,7 +108,21 @@
   </url>
   
   <url>
+    <loc>https://callous-thumber.github.io/categories/Blog/</loc>
+    <lastmod>2024-12-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://callous-thumber.github.io/categories/hexo/Matery/</loc>
+    <lastmod>2024-12-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://callous-thumber.github.io/categories/Blog/Hexo/</loc>
     <lastmod>2024-12-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
