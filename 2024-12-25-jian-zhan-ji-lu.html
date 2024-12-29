@@ -414,7 +414,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    12 分
                 </div>
                 
 
@@ -495,22 +495,67 @@ ProductVersion:		13.3.1</p>
 <li><a target="_blank" rel="noopener" href="https://www.npmjs.com/" title="nmp link">nmp</a></li>
 </ul>
 <p>MacOS上，<code>node.js</code>安装指令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ brew install node@22</span><br><span class="line"></span><br><span class="line"># verifies the right Node.js version is in the environment  </span><br><span class="line">$node -v     # should print `v22.12.0`</span><br><span class="line"></span><br><span class="line"># verifies the right npm version is in the environment</span><br><span class="line">$npm -v # should print `10.9.0`</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">$ brew install node@22
+
+# verifies the right Node.js version is in the environment  
+$node -v     # should print &#96;v22.12.0&#96;
+
+# verifies the right npm version is in the environment
+$npm -v # should print &#96;10.9.0&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>NPM则已经被新版的 <code>Node.js</code> 集成了，而git则默认想要搭建博客的您已经配备。</p>
 <h2 id="问题补充-——针对终端找不到node及npm的问题：">[问题补充]——针对终端找不到node及npm的问题：</h2>
 <p>当运行上述安装指令并查看版本时，有可能出现<code>node: command not found</code>及<code>npm: command not found</code>，解决方案如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 1. 确定使用的Shell</span><br><span class="line">$ echo $SHELL</span><br><span class="line"># 如果输出是 /bin/zsh，则使用 ~/.zshrc；如果是 /bin/bash，则使用 ~/.bashrc。</span><br><span class="line"></span><br><span class="line"># 2. 编辑对应的配置文件</span><br><span class="line">$ nano ~/.zshrc  # 如果是 bash，则运行 nano ~/.bashrc</span><br><span class="line"></span><br><span class="line"># 在文件末尾添加以下内容</span><br><span class="line">$ export PATH=&quot;/usr/local/opt/node@22/bin:$PATH&quot;</span><br><span class="line"></span><br><span class="line"># 3. 保存并退出（Ctrl + O 保存，Ctrl + X 退出）</span><br><span class="line"></span><br><span class="line"># 4. 立即生效配置</span><br><span class="line">$ source ~/.zshrc  # 如果是 bash，则运行 source ~/.bashrc</span><br><span class="line"></span><br><span class="line"># 5. 验证路径是否添加成功</span><br><span class="line">$ echo $PATH</span><br><span class="line">$ which node</span><br><span class="line">$ node -v</span><br><span class="line"></span><br><span class="line"># 6. 重启终端后再次验证</span><br><span class="line">$ which node</span><br><span class="line">$ node -v</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none"># 1. 确定使用的Shell
+$ echo $SHELL
+# 如果输出是 &#x2F;bin&#x2F;zsh，则使用 ~&#x2F;.zshrc；如果是 &#x2F;bin&#x2F;bash，则使用 ~&#x2F;.bashrc。
+
+# 2. 编辑对应的配置文件
+$ nano ~&#x2F;.zshrc  # 如果是 bash，则运行 nano ~&#x2F;.bashrc
+
+# 在文件末尾添加以下内容
+$ export PATH&#x3D;&quot;&#x2F;usr&#x2F;local&#x2F;opt&#x2F;node@22&#x2F;bin:$PATH&quot;
+
+# 3. 保存并退出（Ctrl + O 保存，Ctrl + X 退出）
+
+# 4. 立即生效配置
+$ source ~&#x2F;.zshrc  # 如果是 bash，则运行 source ~&#x2F;.bashrc
+
+# 5. 验证路径是否添加成功
+$ echo $PATH
+$ which node
+$ node -v
+
+# 6. 重启终端后再次验证
+$ which node
+$ node -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-2-安装-Hexo">2.2 安装 Hexo</h2>
 <p>所有必备的应用程序安装完成后，即可使用 <code>npm</code>安装 Hexo。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#安装</span><br><span class="line">$ npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line">#检查版本号</span><br><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">#安装
+$ npm install -g hexo-cli
+
+#检查版本号
+$ hexo -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="问题补充-——Hexo更新">[问题补充]——Hexo更新</h3>
 <p>为安装下述Hexo主题，建议安装Hexo 5.0.0 及以上的版本，若已经有一个自己的 Hexo 博客了，建议你将 Hexo 升级到最新稳定的版本。更新方式如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 升级node.js</span><br><span class="line">npm install npm@latest -g</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 升级Hexo</span><br><span class="line"></span><br><span class="line"># 安装 npm-check 和 npm-upgrade</span><br><span class="line">npm install -g npm-check npm-upgrade</span><br><span class="line"># 检查本地插件版本</span><br><span class="line">npm-check</span><br><span class="line"># 交互式升级，根据提示即可完成升级</span><br><span class="line">npm-upgrade</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none"># 升级node.js
+npm install npm@latest -g
+
+
+# 升级Hexo
+
+# 安装 npm-check 和 npm-upgrade
+npm install -g npm-check npm-upgrade
+# 检查本地插件版本
+npm-check
+# 交互式升级，根据提示即可完成升级
+npm-upgrade<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-3-创建博客站点">2.3 创建博客站点</h2>
 <p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">$ hexo init &lt;folder&gt;
+$ cd &lt;folder&gt;
+$ npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-4-下载主题">2.4 下载主题</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/blinkfox/hexo-theme-matery.git /app/themes/matery; #这里路径中的app为上述创建的自己的博客文件夹</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">$ git clone https:&#x2F;&#x2F;github.com&#x2F;blinkfox&#x2F;hexo-theme-matery.git &#x2F;app&#x2F;themes&#x2F;matery; #这里路径中的app为上述创建的自己的博客文件夹<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="2-5-切换主题">2.5 切换主题</h2>
 <p>将Hexo 根目录下的 <code>_config.yml</code> 的 <code>theme</code> 的值：<code>theme: hexo-theme-matery</code></p>
 <blockquote>
@@ -528,54 +573,116 @@ ProductVersion:		13.3.1</p>
 <h2 id="2-6-新建主题必备页面">2.6 新建主题必备页面</h2>
 <h3 id="2-6-1-新建404页">2.6.1 新建404页</h3>
 <p><code>404</code>页是用来告知浏览者其所请求的页面不存在或链接错误，同时引导用户使用网站其他页面而不是关闭窗口离开，消除用户的挫败感的页面。如果 <code>source</code> 目录下还没有 <code>/404/index.md</code>文件，那么就需要新建一个，命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page &quot;404&quot;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">$ hexo new page &quot;404&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>新建的<code>404</code>页面输入如下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 404</span><br><span class="line">date: #自己的创建日期</span><br><span class="line">type: &quot;404&quot;</span><br><span class="line">layout: &quot;404&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">---
+title: 404
+date: #自己的创建日期
+type: &quot;404&quot;
+layout: &quot;404&quot;
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-6-2-新建分类categories页">2.6.2 新建分类categories页</h3>
 <p><code>categories</code> 页是用来展示所有分类的页面，如果 <code>source</code> 目录下还没有 <code>categories/index.md</code> 文件，那么就需要新建一个，命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page &quot;categories&quot;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">$ hexo new page &quot;categories&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>编辑你刚刚新建的页面文件 <code>/source/categories/index.md</code>，至少需要以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: #自己的创建日期</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">layout: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">---
+title: categories
+date: #自己的创建日期
+type: &quot;categories&quot;
+layout: &quot;categories&quot;
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-6-3-新建标签-tags-页">2.6.3 新建标签 tags 页</h3>
 <p><code>tags</code> 页是用来展示所有标签的页面，如果 <code>source</code> 目录下还没有 <code>tags/index.md</code> 文件，那么就需要新建一个，命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page &quot;tags&quot;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">$ hexo new page &quot;tags&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>编辑你刚刚新建的页面文件 <code>/source/tags/index.md</code>，至少需要以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: #自己的创建日期</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">layout: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">---
+title: tags
+date: #自己的创建日期
+type: &quot;tags&quot;
+layout: &quot;tags&quot;
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-6-4-新建关于我-about-页">2.6.4 新建关于我 about 页</h3>
 <p><code>about</code> 页是用来展示关于我和我的博客信息的页面，如果 <code>source</code> 目录下还没有 <code>about/index.md</code> 文件，那么就需要新建一个，命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page &quot;about&quot;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">$ hexo new page &quot;about&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>编辑你刚刚新建的页面文件 <code>/source/about/index.md</code>，至少需要以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: #自己的创建日期</span><br><span class="line">type: &quot;about&quot;</span><br><span class="line">layout: &quot;about&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">---
+title: about
+date: #自己的创建日期
+type: &quot;about&quot;
+layout: &quot;about&quot;
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-7-新建文章模板修改">2.7 新建文章模板修改</h2>
 <p>修改文章模板，每次创建文章之后新文章的<code>Front-matte</code>r以及基本内容会按照模板创建，提高编辑效率。</p>
 <p>建议将<code>/scaffolds/post.md</code>修改为如下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">author: </span><br><span class="line">img: </span><br><span class="line">coverImg: </span><br><span class="line">top: false</span><br><span class="line">cover: false</span><br><span class="line">toc: true</span><br><span class="line">mathjax: false</span><br><span class="line">password:</span><br><span class="line">summary:</span><br><span class="line">tags:</span><br><span class="line">categories:</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">这里为基本内容</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">---
+title: &#123;&#123; title &#125;&#125;
+date: &#123;&#123; date &#125;&#125;
+author: 
+img: 
+coverImg: 
+top: false
+cover: false
+toc: true
+mathjax: false
+password:
+summary:
+tags:
+categories:
+---
+
+这里为基本内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-8-代码高亮">2.8 代码高亮</h2>
 <p>修改 <code>Hexo</code> 根目录下 <code>_config.yml</code> 文件中 <code>highlight</code>.<code>enable</code> 的值为 <code>false</code>，并将 <code>prismjs.enable</code> 的值设置为 <code>true</code>，主要配置如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  enable: false</span><br><span class="line">  line_number: false #初始为true</span><br><span class="line">  auto_detect: false</span><br><span class="line">  tab_replace: &#x27;&#x27;</span><br><span class="line">  wrap: true</span><br><span class="line">  hljs: false</span><br><span class="line">prismjs:</span><br><span class="line">  enable: true</span><br><span class="line">  preprocess: true</span><br><span class="line">  line_number: false #初始为true</span><br><span class="line">  tab_replace: &#x27;&#x27;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">highlight:
+  enable: false
+  line_number: false #初始为true
+  auto_detect: false
+  tab_replace: &#39;&#39;
+  wrap: true
+  hljs: false
+prismjs:
+  enable: true
+  preprocess: true
+  line_number: false #初始为true
+  tab_replace: &#39;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这里作者博客中说的是<code>line_number</code>的值没有改动，但可能会出现<a target="_blank" rel="noopener" href="https://blog.csdn.net/Withdraw_end/article/details/120645255" title="issues_link">issues</a>，如下图所示：</p>
 <p><img src="../images/post_img/building_record/highlight_bug01.jpg" alt="bug_img" title="bug_img"></p>
 <p>因此根据上述链接所示文章，将<code>line_number</code>的值改为<code>false</code>。</p>
 <h2 id="2-9-添加文章搜索功能">2.9 添加文章搜索功能</h2>
 <p>搜索功能需要安装插件，安装命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">$ npm install hexo-generator-searchdb --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: true</span><br><span class="line">  format: html</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">search:
+  path: search.xml
+  field: post
+  content: true
+  format: html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-10-文章链接转静态短地址">2.10 文章链接转静态短地址</h2>
 <p>如果文章名称是中文的，那么 Hexo 默认生成的永久链接也会有中文，这样不利于 <code>SEO</code>，且 <code>gitment</code> 评论对中文链接也不支持。因此，通过Hexo插件<a target="_blank" rel="noopener" href="https://github.com/viko16/hexo-permalink-pinyin" title="hexo-permalink-pinyin link">hexo-permalink-pinyin</a>生成文章时生成中文拼音的永久链接，运行代码进行安装：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i hexo-permalink-pinyin --save</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">$ npm i hexo-permalink-pinyin --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>并且需要在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">permalink_pinyin:</span><br><span class="line">  enable: true</span><br><span class="line">  separator: &#x27;-&#x27; # default: &#x27;-&#x27;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">permalink_pinyin:
+  enable: true
+  separator: &#39;-&#39; # default: &#39;-&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-11-添加-emoji-表情支持">2.11 添加 emoji 表情支持</h2>
 <p>使用 <code>hexo-filter-github-emojis</code> 的 Hexo 插件来支持 <code>emoji</code> 表情的生成，把对应的 <code>markdown emoji</code> 语法（ <code>::</code> ,例如：<code>:smile:</code> ）转变成会跳跃的emoji表情，安装命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-filter-github-emojis --save</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">$ npm install hexo-filter-github-emojis --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>同时需要在 Hexo 根目录下的 _config.yml 文件中，新增以下的配置项：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">githubEmojis:</span><br><span class="line">  enable: true</span><br><span class="line">  className: github-emoji</span><br><span class="line">  inject: true</span><br><span class="line">  styles:</span><br><span class="line">  customEmojis:</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-12-文章字数统计插件">2.12 文章字数统计插件</h2>
 <p>配置Hexo插件，以在文章中显示文章字数、阅读时长信息。安装指令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i --save hexo-wordcount</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">$ npm i --save hexo-wordcount<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后只需在<strong>本主题下的</strong> <code>_config.yml</code> 文件中，激活以下配置项即可：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wordCount:</span><br><span class="line">  enable: false # 将这个值设置为 true 即可.</span><br><span class="line">  postWordCount: true</span><br><span class="line">  min2read: true</span><br><span class="line">  totalCount: true</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">wordCount:
+  enable: false # 将这个值设置为 true 即可.
+  postWordCount: true
+  min2read: true
+  totalCount: true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-13-部署轻量级博客评论系统">2.13 部署轻量级博客评论系统</h2>
 <p>Valine 诞生于2017年8月7日，是一款基于<a target="_blank" rel="noopener" href="https://www.leancloud.cn/" title="leancloud link">LeanCloud</a>的快速、简洁且高效的无后端评论系统。</p>
 <p>由于Valine是基于LeanCloud服务的，数据都在LeanCloud存储。因此需要注册个LeanCloud才能使用。下面为基本的注册流程。</p>
@@ -589,7 +696,19 @@ ProductVersion:		13.3.1</p>
 </blockquote>
 <p>在此之后，还需要去主题配置文件<code>_config.yml</code>中进行修改。<br>
 在主题配置找到以下参数进行修改：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># Valine.</span><br><span class="line"># You can get your appid and appkey from https://leancloud.cn</span><br><span class="line"># more info please open https://valine.js.org</span><br><span class="line">valine:</span><br><span class="line">  enable: true //打开valine评论功能</span><br><span class="line">  appid: 你的leancloud appid </span><br><span class="line">  appkey: 你的leancloud appkey </span><br><span class="line">  notify: false //邮件提醒</span><br><span class="line">  verify: true //评论时是否有验证码，需要在Leancloud 设置-&gt;安全中心 中打开</span><br><span class="line">  placeholder: 说点什么吧！ //评论框默认显示</span><br><span class="line">  avatar: hide //评论者的头像,我这里设置的不显示</span><br><span class="line">  guest_info: nick # custom comment header</span><br><span class="line">  pageSize: 10 # pagination size</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none"># Valine.
+# You can get your appid and appkey from https:&#x2F;&#x2F;leancloud.cn
+# more info please open https:&#x2F;&#x2F;valine.js.org
+valine:
+  enable: true &#x2F;&#x2F;打开valine评论功能
+  appid: 你的leancloud appid 
+  appkey: 你的leancloud appkey 
+  notify: false &#x2F;&#x2F;邮件提醒
+  verify: true &#x2F;&#x2F;评论时是否有验证码，需要在Leancloud 设置-&gt;安全中心 中打开
+  placeholder: 说点什么吧！ &#x2F;&#x2F;评论框默认显示
+  avatar: hide &#x2F;&#x2F;评论者的头像,我这里设置的不显示
+  guest_info: nick # custom comment header
+  pageSize: 10 # pagination size<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>到这里，一个基本的博客便创建完成。</p>
 
                 
