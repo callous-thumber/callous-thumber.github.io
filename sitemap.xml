@@ -4,7 +4,7 @@
   <url>
     <loc>https://callous-thumber.github.io/2024-12-25-jian-zhan-ji-lu.html</loc>
     
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2024-12-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -85,7 +85,7 @@
 
   <url>
     <loc>https://callous-thumber.github.io/</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2024-12-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -93,7 +93,7 @@
   
   <url>
     <loc>https://callous-thumber.github.io/tags/Hexo/</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -102,28 +102,28 @@
   
   <url>
     <loc>https://callous-thumber.github.io/categories/Blog/</loc>
-    <lastmod>2024-12-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://callous-thumber.github.io/categories/hexo/</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://callous-thumber.github.io/categories/Blog/Hexo/</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2024-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://callous-thumber.github.io/categories/hexo/</loc>
+    <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://callous-thumber.github.io/categories/hexo/Matery/</loc>
-    <lastmod>2024-12-29</lastmod>
+    <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
