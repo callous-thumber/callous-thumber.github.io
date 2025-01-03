@@ -4,6 +4,48 @@
   
     
     <entry>
+      <title>修改HAESF、HGMAE模型Baseline经验</title>
+      <link href="/2025-01-03-xiu-gai-haesf-hgmae-mo-xing-baseline-jing-yan.html"/>
+      <url>/2025-01-03-xiu-gai-haesf-hgmae-mo-xing-baseline-jing-yan.html</url>
+      
+        <content type="html"><![CDATA[<p><img src="../images/post_img/project_experience/20250103_HAESF_HGMAE_img.webp" alt="工程经验总结示意图" title="工程经验总结示意图"></p><h1>修改HAESF、HGMAE模型工程经验总结</h1><h2 id="1-主要任务说明">1. 主要任务说明</h2><p>研0第一个小任务，更改Baseline代码读取数据部分，补充一个新的数据集并确保可以运行，跑聚类结果，统计NMI ARI 2个指标，把结果统计到一个表格。</p><p>同时，HAESF与HGMAE作为异质信息网络，是单独使用adjacency_matrix_1, adjacency_matrix_2 作为两个独立的网络。在构建邻接矩阵应当注意。</p><h2 id="2-面临问题">2. 面临问题</h2><h3 id="2-1-pytorch以及dgl环境配置版本问题">2.1 pytorch以及dgl环境配置版本问题</h3><p>提供的配置环境文档存在版本冲突，在import dgl的时候报错：</p><pre class="line-numbers language-none"><code class="language-none">importerror: libssl.so.3: cannot open shared object file: no such file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><strong>正常解决方案：</strong> 针对报错查找解决方式无果，便根据显卡、python版本、cuda版本到官网重新寻找对应库的安装方式</p><p><strong>（torch版本与cuda版本相关，cuda版本与驱动版本相关，驱动版本应看显卡配置）</strong></p><pre class="line-numbers language-none"><code class="language-none"># NVIDIA驱动：550（影响不大），CUDA 11.8，显卡：4060ti# Linux下，dgl需要python2.1以上环境# PyG is available for Python 3.9 to Python 3.12conda create -y -n HGMAE_test python&#x3D;3.9conda activate HGMAE_test conda install pytorch&#x3D;&#x3D;2.1.0 torchvision&#x3D;&#x3D;0.16.0 torchaudio&#x3D;&#x3D;2.1.0 pytorch-cuda&#x3D;11.8 -c pytorch -c nvidia conda install pyg -c pyg conda install -c dglteam&#x2F;label&#x2F;th21_cu118 dgl pip install pyyaml pip install cdlib -i [https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple&#x2F;](https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple&#x2F;) pip install munkres<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>小插曲：</strong> 一开始想要更换显卡驱动，在docker的自己的分区删除了所有nvidia*，但在重新安装驱动的时候出现报错，怀疑是只是把自己的分区内的nvidia驱动删除了，导致删除不彻底，导致nvidia-smi都无法运行。</p><p>之后又尝试在服务器图形操作界面更换驱动，并重启，结果导致服务器黑屏，原因是已经进入了ubuntu系统，只是没法加载图形化界面，因为NVIDIA 显卡驱动带来的一系列和ubuntu系统的 GNOME、LightDM 等桌面环境不适配、不兼容。</p><p>然而虽然图形界面没法打开，但是系统是已经开机了，只是docker没有启动，无法用ssh连接到分区的用户名ip</p><p>最终通过ssh 服务器的管理员账号，在全局重装了显卡驱动，得以正常开机，且nvidia-smi能够顺利运行。然而只是把额外的问题解决了，版本冲突的问题还没解决。</p><h3 id="2-2-device问题">2.2 device问题</h3><p>同时启动<code>cuda0</code> 和 <code>cpu</code>，要计算的数据可能一部分在 <code>cpu</code>，一部分在 <code>cuda0 </code>，直接调整方法很简单，即若待计算数据A与B在不同设备，获取A的 <code>device </code>，并将B放置到A的 <code>device</code>                                         。</p><p>进一步的问题是修改何处的 <code>A </code>与 <code>B</code>。最初我运行报错的时候，直接反馈的是代码 <code>model </code>单元的 <code>forward </code>函数的一处计算，直接反应是在函数内进行修改，然而改动的影响太小（即后续另一处函数的某个计算仍可能报错）。</p><p>后面整体思考了一下，改动的只有初始数据接口， <code>debug </code>一下果然在 <code>main </code>函数中转入到 <code>model </code>模块前<code>features</code>和<code>label</code>不在同一个<code>device</code>上，只须修改这里即可。</p><p>进一步思考简单转到一个设备，若设备主存不够应如何处理？目前还未细究。</p><h3 id="2-3-double，float冲突">2.3 double，float冲突</h3><p>要把导入后的数据在tensor中的数据类型统一，这里统一使用<code>.to(torch.float32)</code>改为float型</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学术 </category>
+          
+          <category> 工程经验 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学术 </tag>
+            
+            <tag> 工程经验 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>test</title>
+      <link href="/2025-01-03-test.html"/>
+      <url>/2025-01-03-test.html</url>
+      
+        <content type="html"><![CDATA[<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello,wordl"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>建站记录</title>
       <link href="/2024-12-25-jian-zhan-ji-lu.html"/>
       <url>/2024-12-25-jian-zhan-ji-lu.html</url>
@@ -19,6 +61,14 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> Matery </tag>
+            
+        </tags>
       
     </entry>
     

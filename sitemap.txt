@@ -1,3 +1,5 @@
+https://callous-thumber.github.io/2025-01-03-test.html
+https://callous-thumber.github.io/2025-01-03-xiu-gai-haesf-hgmae-mo-xing-baseline-jing-yan.html
 https://callous-thumber.github.io/2024-12-25-jian-zhan-ji-lu.html
 https://callous-thumber.github.io/bb/index.html
 https://callous-thumber.github.io/2024-12-20-hello-world.html
@@ -9,7 +11,13 @@ https://callous-thumber.github.io/tags/index.html
 https://callous-thumber.github.io/categories/index.html
 https://callous-thumber.github.io/
 https://callous-thumber.github.io/tags/Hexo/
+https://callous-thumber.github.io/tags/hexo/
+https://callous-thumber.github.io/tags/Matery/
+https://callous-thumber.github.io/tags/%E5%AD%A6%E6%9C%AF/
+https://callous-thumber.github.io/tags/%E5%B7%A5%E7%A8%8B%E7%BB%8F%E9%AA%8C/
 https://callous-thumber.github.io/categories/Blog/
 https://callous-thumber.github.io/categories/Blog/Hexo/
 https://callous-thumber.github.io/categories/hexo/
+https://callous-thumber.github.io/categories/%E5%AD%A6%E6%9C%AF/
 https://callous-thumber.github.io/categories/hexo/Matery/
+https://callous-thumber.github.io/categories/%E5%AD%A6%E6%9C%AF/%E5%B7%A5%E7%A8%8B%E7%BB%8F%E9%AA%8C/
