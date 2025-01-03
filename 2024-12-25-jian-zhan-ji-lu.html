@@ -422,7 +422,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    11 分
                 </div>
                 
 
@@ -506,65 +506,65 @@ ProductVersion:		13.3.1</p>
 <li><a target="_blank" rel="noopener" href="https://www.npmjs.com/" title="nmp link">nmp</a></li>
 </ul>
 <p>MacOS上，<code>node.js</code>安装指令：</p>
-<pre class="line-numbers language-none"><code class="language-none">brew install node@22
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> node@22
 
-# verifies the right Node.js version is in the environment  
-node -v     # should print &#96;v22.12.0&#96;
+<span class="token comment"># verifies the right Node.js version is in the environment  </span>
+<span class="token function">node</span> <span class="token parameter variable">-v</span>     <span class="token comment"># should print `v22.12.0`</span>
 
-# verifies the right npm version is in the environment
-npm -v # should print &#96;10.9.0&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># verifies the right npm version is in the environment</span>
+<span class="token function">npm</span> <span class="token parameter variable">-v</span> <span class="token comment"># should print `10.9.0`</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>NPM则已经被新版的 <code>Node.js</code> 集成了，而git则默认想要搭建博客的您已经配备。</p>
 <h2 id="问题补充-——针对终端找不到node及npm的问题：">[问题补充]——针对终端找不到node及npm的问题：</h2>
 <p>当运行上述安装指令并查看版本时，有可能出现<code>node: command not found</code>及<code>npm: command not found</code>，解决方案如下：</p>
-<pre class="line-numbers language-none"><code class="language-none"># 1. 确定使用的Shell
-$ echo $SHELL
-# 如果输出是 &#x2F;bin&#x2F;zsh，则使用 ~&#x2F;.zshrc；如果是 &#x2F;bin&#x2F;bash，则使用 ~&#x2F;.bashrc。
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 1. 确定使用的Shell</span>
+$ <span class="token builtin class-name">echo</span> <span class="token environment constant">$SHELL</span>
+<span class="token comment"># 如果输出是 /bin/zsh，则使用 ~/.zshrc；如果是 /bin/bash，则使用 ~/.bashrc。</span>
 
-# 2. 编辑对应的配置文件
-$ nano ~&#x2F;.zshrc  # 如果是 bash，则运行 nano ~&#x2F;.bashrc
+<span class="token comment"># 2. 编辑对应的配置文件</span>
+$ <span class="token function">nano</span> ~/.zshrc  <span class="token comment"># 如果是 bash，则运行 nano ~/.bashrc</span>
 
-# 在文件末尾添加以下内容
-$ export PATH&#x3D;&quot;&#x2F;usr&#x2F;local&#x2F;opt&#x2F;node@22&#x2F;bin:$PATH&quot;
+<span class="token comment"># 在文件末尾添加以下内容</span>
+$ <span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">"/usr/local/opt/node@22/bin:<span class="token environment constant">$PATH</span>"</span>
 
-# 3. 保存并退出（Ctrl + O 保存，Ctrl + X 退出）
+<span class="token comment"># 3. 保存并退出（Ctrl + O 保存，Ctrl + X 退出）</span>
 
-# 4. 立即生效配置
-$ source ~&#x2F;.zshrc  # 如果是 bash，则运行 source ~&#x2F;.bashrc
+<span class="token comment"># 4. 立即生效配置</span>
+$ <span class="token builtin class-name">source</span> ~/.zshrc  <span class="token comment"># 如果是 bash，则运行 source ~/.bashrc</span>
 
-# 5. 验证路径是否添加成功
-$ echo $PATH
-$ which node
-$ node -v
+<span class="token comment"># 5. 验证路径是否添加成功</span>
+$ <span class="token builtin class-name">echo</span> <span class="token environment constant">$PATH</span>
+$ <span class="token function">which</span> <span class="token function">node</span>
+$ <span class="token function">node</span> <span class="token parameter variable">-v</span>
 
-# 6. 重启终端后再次验证
-$ which node
-$ node -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 6. 重启终端后再次验证</span>
+$ <span class="token function">which</span> <span class="token function">node</span>
+$ <span class="token function">node</span> <span class="token parameter variable">-v</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-2-安装-Hexo">2.2 安装 Hexo</h2>
 <p>所有必备的应用程序安装完成后，即可使用 <code>npm</code>安装 Hexo。</p>
-<pre class="line-numbers language-none"><code class="language-none">#安装
-$ npm install -g hexo-cli
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#安装</span>
+$ <span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> hexo-cli
 
-#检查版本号
-$ hexo -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">#检查版本号</span>
+$ hexo <span class="token parameter variable">-v</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="问题补充-——Hexo更新">[问题补充]——Hexo更新</h3>
 <p>为安装下述Hexo主题，建议安装Hexo 5.0.0 及以上的版本，若已经有一个自己的 Hexo 博客了，建议你将 Hexo 升级到最新稳定的版本。更新方式如下：</p>
-<pre class="line-numbers language-none"><code class="language-none"># 升级node.js
-npm install npm@latest -g
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 升级node.js</span>
+<span class="token function">npm</span> <span class="token function">install</span> npm@latest <span class="token parameter variable">-g</span>
 
 
-# 升级Hexo
+<span class="token comment"># 升级Hexo</span>
 
-# 安装 npm-check 和 npm-upgrade
-npm install -g npm-check npm-upgrade
-# 检查本地插件版本
+<span class="token comment"># 安装 npm-check 和 npm-upgrade</span>
+<span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> npm-check npm-upgrade
+<span class="token comment"># 检查本地插件版本</span>
 npm-check
-# 交互式升级，根据提示即可完成升级
+<span class="token comment"># 交互式升级，根据提示即可完成升级</span>
 npm-upgrade<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-3-创建博客站点">2.3 创建博客站点</h2>
 <p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
-<pre class="line-numbers language-none"><code class="language-none">$ hexo init &lt;folder&gt;
-$ cd &lt;folder&gt;
-$ npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo init <span class="token operator">&lt;</span>folder<span class="token operator">></span>
+$ <span class="token builtin class-name">cd</span> <span class="token operator">&lt;</span>folder<span class="token operator">></span>
+$ <span class="token function">npm</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-4-下载主题">2.4 下载主题</h2>
 <pre class="line-numbers language-none"><code class="language-none">$ git clone https:&#x2F;&#x2F;github.com&#x2F;blinkfox&#x2F;hexo-theme-matery.git &#x2F;app&#x2F;themes&#x2F;matery; #这里路径中的app为上述创建的自己的博客文件夹<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="2-5-切换主题">2.5 切换主题</h2>
@@ -584,37 +584,37 @@ $ npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
 <h2 id="2-6-新建主题必备页面">2.6 新建主题必备页面</h2>
 <h3 id="2-6-1-新建404页">2.6.1 新建404页</h3>
 <p><code>404</code>页是用来告知浏览者其所请求的页面不存在或链接错误，同时引导用户使用网站其他页面而不是关闭窗口离开，消除用户的挫败感的页面。如果 <code>source</code> 目录下还没有 <code>/404/index.md</code>文件，那么就需要新建一个，命令如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ hexo new page &quot;404&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new page <span class="token string">"404"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>新建的<code>404</code>页面输入如下内容：</p>
-<pre class="line-numbers language-none"><code class="language-none">---
-title: 404
-date: #自己的创建日期
-type: &quot;404&quot;
-layout: &quot;404&quot;
----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">--</span><span class="token operator">-</span>
+<span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token number">404</span>
+<span class="token literal-property property">date</span><span class="token operator">:</span> #自己的创建日期
+<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"404"</span>
+<span class="token literal-property property">layout</span><span class="token operator">:</span> <span class="token string">"404"</span>
+<span class="token operator">--</span><span class="token operator">-</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-6-2-新建分类categories页">2.6.2 新建分类categories页</h3>
 <p><code>categories</code> 页是用来展示所有分类的页面，如果 <code>source</code> 目录下还没有 <code>categories/index.md</code> 文件，那么就需要新建一个，命令如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ hexo new page &quot;categories&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new page <span class="token string">"categories"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>编辑你刚刚新建的页面文件 <code>/source/categories/index.md</code>，至少需要以下内容：</p>
-<pre class="line-numbers language-none"><code class="language-none">---
-title: categories
-date: #自己的创建日期
-type: &quot;categories&quot;
-layout: &quot;categories&quot;
----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">--</span><span class="token operator">-</span>
+<span class="token literal-property property">title</span><span class="token operator">:</span> categories
+<span class="token literal-property property">date</span><span class="token operator">:</span> #自己的创建日期
+<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"categories"</span>
+<span class="token literal-property property">layout</span><span class="token operator">:</span> <span class="token string">"categories"</span>
+<span class="token operator">--</span><span class="token operator">-</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-6-3-新建标签-tags-页">2.6.3 新建标签 tags 页</h3>
 <p><code>tags</code> 页是用来展示所有标签的页面，如果 <code>source</code> 目录下还没有 <code>tags/index.md</code> 文件，那么就需要新建一个，命令如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ hexo new page &quot;tags&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new page <span class="token string">"tags"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>编辑你刚刚新建的页面文件 <code>/source/tags/index.md</code>，至少需要以下内容：</p>
-<pre class="line-numbers language-none"><code class="language-none">---
-title: tags
-date: #自己的创建日期
-type: &quot;tags&quot;
-layout: &quot;tags&quot;
----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">--</span><span class="token operator">-</span>
+<span class="token literal-property property">title</span><span class="token operator">:</span> tags
+<span class="token literal-property property">date</span><span class="token operator">:</span> #自己的创建日期
+<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"tags"</span>
+<span class="token literal-property property">layout</span><span class="token operator">:</span> <span class="token string">"tags"</span>
+<span class="token operator">--</span><span class="token operator">-</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-6-4-新建关于我-about-页">2.6.4 新建关于我 about 页</h3>
 <p><code>about</code> 页是用来展示关于我和我的博客信息的页面，如果 <code>source</code> 目录下还没有 <code>about/index.md</code> 文件，那么就需要新建一个，命令如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ hexo new page &quot;about&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new page <span class="token string">"about"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>编辑你刚刚新建的页面文件 <code>/source/about/index.md</code>，至少需要以下内容：</p>
 <pre class="line-numbers language-none"><code class="language-none">---
 title: about
@@ -625,75 +625,80 @@ layout: &quot;about&quot;
 <h2 id="2-7-新建文章模板修改">2.7 新建文章模板修改</h2>
 <p>修改文章模板，每次创建文章之后新文章的<code>Front-matte</code>r以及基本内容会按照模板创建，提高编辑效率。</p>
 <p>建议将<code>/scaffolds/post.md</code>修改为如下代码：</p>
-<pre class="line-numbers language-none"><code class="language-none">---
-title: &#123;&#123; title &#125;&#125;
-date: &#123;&#123; date &#125;&#125;
-author: 
-img: 
-coverImg: 
-top: false
-cover: false
-toc: true
-mathjax: false
-password:
-summary:
-tags:
-categories:
----
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">--</span><span class="token operator">-</span>
+<span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> title <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+<span class="token literal-property property">date</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> date <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+<span class="token literal-property property">author</span><span class="token operator">:</span> 
+<span class="token literal-property property">img</span><span class="token operator">:</span> 
+<span class="token literal-property property">coverImg</span><span class="token operator">:</span> 
+<span class="token literal-property property">top</span><span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token literal-property property">cover</span><span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token literal-property property">toc</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token literal-property property">mathjax</span><span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token literal-property property">password</span><span class="token operator">:</span>
+<span class="token literal-property property">summary</span><span class="token operator">:</span>
+<span class="token literal-property property">tags</span><span class="token operator">:</span>
+<span class="token literal-property property">categories</span><span class="token operator">:</span>
+<span class="token operator">--</span><span class="token operator">-</span>
 
 这里为基本内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-8-代码高亮">2.8 代码高亮</h2>
 <p>修改 <code>Hexo</code> 根目录下 <code>_config.yml</code> 文件中 <code>highlight</code>.<code>enable</code> 的值为 <code>false</code>，并将 <code>prismjs.enable</code> 的值设置为 <code>true</code>，主要配置如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">highlight:
-  enable: false
-  line_number: false #初始为true
-  auto_detect: false
-  tab_replace: &#39;&#39;
-  wrap: true
-  hljs: false
-prismjs:
-  enable: true
-  preprocess: true
-  line_number: false #初始为true
-  tab_replace: &#39;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">highlight</span><span class="token operator">:</span>
+  <span class="token literal-property property">enable</span><span class="token operator">:</span> <span class="token boolean">false</span>
+  <span class="token literal-property property">line_number</span><span class="token operator">:</span> <span class="token boolean">false</span> #初始为<span class="token boolean">true</span>
+  <span class="token literal-property property">auto_detect</span><span class="token operator">:</span> <span class="token boolean">false</span>
+  <span class="token literal-property property">tab_replace</span><span class="token operator">:</span> <span class="token string">''</span>
+  <span class="token literal-property property">wrap</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token literal-property property">hljs</span><span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token literal-property property">prismjs</span><span class="token operator">:</span>
+  <span class="token literal-property property">enable</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token literal-property property">preprocess</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token literal-property property">line_number</span><span class="token operator">:</span> <span class="token boolean">false</span> #初始为<span class="token boolean">true</span>
+  <span class="token literal-property property">tab_replace</span><span class="token operator">:</span> <span class="token string">''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这里作者博客中说的是<code>line_number</code>的值没有改动，但可能会出现<a target="_blank" rel="noopener" href="https://blog.csdn.net/Withdraw_end/article/details/120645255" title="issues_link">issues</a>，如下图所示：</p>
 <p><img src="../images/post_img/building_record/highlight_bug01.jpg" alt="bug_img" title="bug_img"></p>
 <p>因此根据上述链接所示文章，将<code>line_number</code>的值改为<code>false</code>。</p>
+<p>值得注意的是，若要显示高亮，还需要在代码块前添加语言类型的关键字，如：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token code"><span class="token punctuation">```</span><span class="token code-language">java</span>
+<span class="token code-block language-java"> private String demo;</span>
+<span class="token punctuation">```</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>这样才会按照java语法显示高亮。</p>
 <h2 id="2-9-添加文章搜索功能">2.9 添加文章搜索功能</h2>
 <p>搜索功能需要安装插件，安装命令如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ npm install hexo-generator-searchdb --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-generator-searchdb <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
-<pre class="line-numbers language-none"><code class="language-none">search:
-  path: search.xml
-  field: post
-  content: true
-  format: html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">search</span><span class="token operator">:</span>
+  <span class="token literal-property property">path</span><span class="token operator">:</span> search<span class="token punctuation">.</span>xml
+  <span class="token literal-property property">field</span><span class="token operator">:</span> post
+  <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token literal-property property">format</span><span class="token operator">:</span> html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-10-文章链接转静态短地址">2.10 文章链接转静态短地址</h2>
 <p>如果文章名称是中文的，那么 Hexo 默认生成的永久链接也会有中文，这样不利于 <code>SEO</code>，且 <code>gitment</code> 评论对中文链接也不支持。因此，通过Hexo插件<a target="_blank" rel="noopener" href="https://github.com/viko16/hexo-permalink-pinyin" title="hexo-permalink-pinyin link">hexo-permalink-pinyin</a>生成文章时生成中文拼音的永久链接，运行代码进行安装：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ npm i hexo-permalink-pinyin --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">npm</span> i hexo-permalink-pinyin <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>并且需要在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
-<pre class="line-numbers language-none"><code class="language-none">permalink_pinyin:
-  enable: true
-  separator: &#39;-&#39; # default: &#39;-&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">permalink_pinyin</span><span class="token operator">:</span>
+  <span class="token literal-property property">enable</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token literal-property property">separator</span><span class="token operator">:</span> <span class="token string">'-'</span> # <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">'-'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-11-添加-emoji-表情支持">2.11 添加 emoji 表情支持</h2>
 <p>使用 <code>hexo-filter-github-emojis</code> 的 Hexo 插件来支持 <code>emoji</code> 表情的生成，把对应的 <code>markdown emoji</code> 语法（ <code>::</code> ,例如：<code>:smile:</code> ）转变成会跳跃的emoji表情，安装命令如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ npm install hexo-filter-github-emojis --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-filter-github-emojis <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>同时需要在 Hexo 根目录下的 _config.yml 文件中，新增以下的配置项：</p>
-<pre class="line-numbers language-none"><code class="language-none">githubEmojis:
-  enable: true
-  className: github-emoji
-  inject: true
-  styles:
-  customEmojis:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">githubEmojis</span><span class="token operator">:</span>
+  <span class="token literal-property property">enable</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token literal-property property">className</span><span class="token operator">:</span> github<span class="token operator">-</span>emoji
+  <span class="token literal-property property">inject</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token literal-property property">styles</span><span class="token operator">:</span>
+  <span class="token literal-property property">customEmojis</span><span class="token operator">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-12-文章字数统计插件">2.12 文章字数统计插件</h2>
 <p>配置Hexo插件，以在文章中显示文章字数、阅读时长信息。安装指令如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ npm i --save hexo-wordcount<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">npm</span> i <span class="token parameter variable">--save</span> hexo-wordcount<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后只需在<strong>本主题下的</strong> <code>_config.yml</code> 文件中，激活以下配置项即可：</p>
-<pre class="line-numbers language-none"><code class="language-none">wordCount:
-  enable: false # 将这个值设置为 true 即可.
-  postWordCount: true
-  min2read: true
-  totalCount: true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">wordCount</span><span class="token operator">:</span>
+  <span class="token literal-property property">enable</span><span class="token operator">:</span> <span class="token boolean">false</span> # 将这个值设置为 <span class="token boolean">true</span> 即可<span class="token punctuation">.</span>
+  <span class="token literal-property property">postWordCount</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token literal-property property">min2read</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token literal-property property">totalCount</span><span class="token operator">:</span> <span class="token boolean">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-13-部署轻量级博客评论系统">2.13 部署轻量级博客评论系统</h2>
 <p>Valine 诞生于2017年8月7日，是一款基于<a target="_blank" rel="noopener" href="https://www.leancloud.cn/" title="leancloud link">LeanCloud</a>的快速、简洁且高效的无后端评论系统。</p>
 <p>由于Valine是基于LeanCloud服务的，数据都在LeanCloud存储。因此需要注册个LeanCloud才能使用。下面为基本的注册流程。</p>
@@ -707,19 +712,19 @@ prismjs:
 </blockquote>
 <p>在此之后，还需要去主题配置文件<code>_config.yml</code>中进行修改。<br>
 在主题配置找到以下参数进行修改：</p>
-<pre class="line-numbers language-none"><code class="language-none"># Valine.
-# You can get your appid and appkey from https:&#x2F;&#x2F;leancloud.cn
-# more info please open https:&#x2F;&#x2F;valine.js.org
-valine:
-  enable: true &#x2F;&#x2F;打开valine评论功能
-  appid: 你的leancloud appid 
-  appkey: 你的leancloud appkey 
-  notify: false &#x2F;&#x2F;邮件提醒
-  verify: true &#x2F;&#x2F;评论时是否有验证码，需要在Leancloud 设置-&gt;安全中心 中打开
-  placeholder: 说点什么吧！ &#x2F;&#x2F;评论框默认显示
-  avatar: hide &#x2F;&#x2F;评论者的头像,我这里设置的不显示
-  guest_info: nick # custom comment header
-  pageSize: 10 # pagination size<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"># Valine<span class="token punctuation">.</span>
+# You can <span class="token keyword">get</span> your appid and appkey from https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>leancloud<span class="token punctuation">.</span>cn
+# more info please open https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>valine<span class="token punctuation">.</span>js<span class="token punctuation">.</span>org
+<span class="token literal-property property">valine</span><span class="token operator">:</span>
+  <span class="token literal-property property">enable</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token comment">//打开valine评论功能</span>
+  <span class="token literal-property property">appid</span><span class="token operator">:</span> 你的leancloud appid 
+  <span class="token literal-property property">appkey</span><span class="token operator">:</span> 你的leancloud appkey 
+  <span class="token literal-property property">notify</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token comment">//邮件提醒</span>
+  <span class="token literal-property property">verify</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token comment">//评论时是否有验证码，需要在Leancloud 设置->安全中心 中打开</span>
+  <span class="token literal-property property">placeholder</span><span class="token operator">:</span> 说点什么吧！ <span class="token comment">//评论框默认显示</span>
+  <span class="token literal-property property">avatar</span><span class="token operator">:</span> hide <span class="token comment">//评论者的头像,我这里设置的不显示</span>
+  <span class="token literal-property property">guest_info</span><span class="token operator">:</span> nick # custom comment header
+  <span class="token literal-property property">pageSize</span><span class="token operator">:</span> <span class="token number">10</span> # pagination size<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>到这里，一个基本的博客便创建完成。</p>
 
                 
@@ -1140,19 +1145,19 @@ valine:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2025-01-03-test.html">
+                <a href="/2025-01-03-xiu-gai-haesf-hgmae-mo-xing-baseline-jing-yan.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="修改HAESF、HGMAE模型Baseline经验">
                         
-                        <span class="card-title">test</span>
+                        <span class="card-title">修改HAESF、HGMAE模型Baseline经验</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            第一次更换数据集，运行HAESF、HGMAE的baseline模型的简单经验总结
                         
                     </div>
                     <div class="publish-info">
@@ -1161,51 +1166,14 @@ valine:
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            hj_liang
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2024-12-20-hello-world.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-20
-                            </span>
-                        <span class="publish-author">
-                            
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Blog/" class="post-category">
-                                    Blog
+                            <a href="/categories/%E5%AD%A6%E6%9C%AF/" class="post-category">
+                                    学术
                                 </a>
                             
-                            <a href="/categories/Blog/Hexo/" class="post-category">
-                                    Hexo
+                            <a href="/categories/%E5%AD%A6%E6%9C%AF/%E5%B7%A5%E7%A8%8B%E7%BB%8F%E9%AA%8C/" class="post-category">
+                                    工程经验
                                 </a>
                             
                             
@@ -1215,8 +1183,69 @@ valine:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/%E5%AD%A6%E6%9C%AF/">
+                        <span class="chip bg-color">学术</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%BB%8F%E9%AA%8C/">
+                        <span class="chip bg-color">工程经验</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2024-12-25-jian-zhan-ji-lu.html">
+                    <div class="card-image">
+                        
+                        <img src="/../images/post_img/building_record/hexo_github.png" class="responsive-img" alt="建站记录">
+                        
+                        <span class="card-title">建站记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            基于Hexo（Matery主题）+ git构建个人博客的基本过程
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
+                                </a>
+                            
+                            <a href="/categories/hexo/Matery/" class="post-category">
+                                    Matery
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/Matery/">
+                        <span class="chip bg-color">Matery</span>
                     </a>
                     
                 </div>

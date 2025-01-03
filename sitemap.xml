@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://callous-thumber.github.io/2025-01-03-test.html</loc>
+    <loc>https://callous-thumber.github.io/2024-12-25-jian-zhan-ji-lu.html</loc>
     
     <lastmod>2025-01-03</lastmod>
     
@@ -20,25 +20,7 @@
   </url>
   
   <url>
-    <loc>https://callous-thumber.github.io/2024-12-25-jian-zhan-ji-lu.html</loc>
-    
-    <lastmod>2025-01-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://callous-thumber.github.io/bb/index.html</loc>
-    
-    <lastmod>2024-12-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://callous-thumber.github.io/2024-12-20-hello-world.html</loc>
     
     <lastmod>2024-12-25</lastmod>
     
@@ -110,7 +92,14 @@
 
   
   <url>
-    <loc>https://callous-thumber.github.io/tags/Hexo/</loc>
+    <loc>https://callous-thumber.github.io/tags/%E5%AD%A6%E6%9C%AF/</loc>
+    <lastmod>2025-01-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://callous-thumber.github.io/tags/%E5%B7%A5%E7%A8%8B%E7%BB%8F%E9%AA%8C/</loc>
     <lastmod>2025-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -130,31 +119,10 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://callous-thumber.github.io/tags/%E5%AD%A6%E6%9C%AF/</loc>
-    <lastmod>2025-01-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://callous-thumber.github.io/tags/%E5%B7%A5%E7%A8%8B%E7%BB%8F%E9%AA%8C/</loc>
-    <lastmod>2025-01-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
-    <loc>https://callous-thumber.github.io/categories/Blog/</loc>
-    <lastmod>2025-01-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://callous-thumber.github.io/categories/Blog/Hexo/</loc>
+    <loc>https://callous-thumber.github.io/categories/%E5%AD%A6%E6%9C%AF/</loc>
     <lastmod>2025-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -168,7 +136,7 @@
   </url>
   
   <url>
-    <loc>https://callous-thumber.github.io/categories/%E5%AD%A6%E6%9C%AF/</loc>
+    <loc>https://callous-thumber.github.io/categories/%E5%AD%A6%E6%9C%AF/%E5%B7%A5%E7%A8%8B%E7%BB%8F%E9%AA%8C/</loc>
     <lastmod>2025-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -176,13 +144,6 @@
   
   <url>
     <loc>https://callous-thumber.github.io/categories/hexo/Matery/</loc>
-    <lastmod>2025-01-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://callous-thumber.github.io/categories/%E5%AD%A6%E6%9C%AF/%E5%B7%A5%E7%A8%8B%E7%BB%8F%E9%AA%8C/</loc>
     <lastmod>2025-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

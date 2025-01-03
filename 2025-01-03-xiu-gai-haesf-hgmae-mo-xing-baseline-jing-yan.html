@@ -415,7 +415,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    903
+                    883
                 </div>
                 
 
@@ -453,28 +453,28 @@
 <h2 id="2-面临问题">2. 面临问题</h2>
 <h3 id="2-1-pytorch以及dgl环境配置版本问题">2.1 pytorch以及dgl环境配置版本问题</h3>
 <p>提供的配置环境文档存在版本冲突，在import dgl的时候报错：</p>
-<pre class="line-numbers language-none"><code class="language-none">importerror: libssl.so.3: cannot open shared object file: no such file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-false" data-language="false"><code class="language-false"><span class="token variable">i</span><span class="token variable">m</span><span class="token variable">p</span><span class="token variable">o</span><span class="token variable">r</span><span class="token variable">t</span><span class="token variable">e</span><span class="token variable">r</span><span class="token variable">r</span><span class="token variable">o</span><span class="token variable">r</span><span class="token operator">:</span> <span class="token variable">l</span><span class="token variable">i</span><span class="token variable">b</span><span class="token variable">s</span><span class="token variable">s</span><span class="token variable">l</span><span class="token operator">.</span><span class="token variable">s</span><span class="token variable">o</span><span class="token operator">.</span><span class="token number">3</span><span class="token operator">:</span> <span class="token variable">c</span><span class="token variable">a</span><span class="token variable">n</span><span class="token variable">n</span><span class="token variable">o</span><span class="token variable">t</span> <span class="token variable">o</span><span class="token variable">p</span><span class="token variable">e</span><span class="token variable">n</span> <span class="token variable">s</span><span class="token variable">h</span><span class="token variable">a</span><span class="token variable">r</span><span class="token variable">e</span><span class="token variable">d</span> <span class="token variable">o</span><span class="token variable">b</span><span class="token variable">j</span><span class="token variable">e</span><span class="token variable">c</span><span class="token variable">t</span> <span class="token variable">f</span><span class="token variable">i</span><span class="token variable">l</span><span class="token variable">e</span><span class="token operator">:</span> <span class="token variable">n</span><span class="token variable">o</span> <span class="token variable">s</span><span class="token variable">u</span><span class="token variable">c</span><span class="token variable">h</span> <span class="token variable">f</span><span class="token variable">i</span><span class="token variable">l</span><span class="token variable">e</span> <span class="token variable">o</span><span class="token variable">r</span> <span class="token variable">d</span><span class="token variable">i</span><span class="token variable">r</span><span class="token variable">e</span><span class="token variable">c</span><span class="token variable">t</span><span class="token variable">o</span><span class="token variable">r</span><span class="token variable">y</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>正常解决方案：</strong> 针对报错查找解决方式无果，便根据显卡、python版本、cuda版本到官网重新寻找对应库的安装方式</p>
 <p><strong>（torch版本与cuda版本相关，cuda版本与驱动版本相关，驱动版本应看显卡配置）</strong></p>
-<pre class="line-numbers language-none"><code class="language-none"># NVIDIA驱动：550（影响不大），CUDA 11.8，显卡：4060ti
-# Linux下，dgl需要python2.1以上环境
-# PyG is available for Python 3.9 to Python 3.12
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># NVIDIA驱动：550（影响不大），CUDA 11.8，显卡：4060ti</span>
+<span class="token comment"># Linux下，dgl需要python2.1以上环境</span>
+<span class="token comment"># PyG is available for Python 3.9 to Python 3.12</span>
 
-conda create -y -n HGMAE_test python&#x3D;3.9
+conda create <span class="token parameter variable">-y</span> <span class="token parameter variable">-n</span> HGMAE_test <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.9</span>
 
 conda activate HGMAE_test 
 
-conda install pytorch&#x3D;&#x3D;2.1.0 torchvision&#x3D;&#x3D;0.16.0 torchaudio&#x3D;&#x3D;2.1.0 pytorch-cuda&#x3D;11.8 -c pytorch -c nvidia 
+conda <span class="token function">install</span> <span class="token assign-left variable">pytorch</span><span class="token operator">==</span><span class="token number">2.1</span>.0 <span class="token assign-left variable">torchvision</span><span class="token operator">==</span><span class="token number">0.16</span>.0 <span class="token assign-left variable">torchaudio</span><span class="token operator">==</span><span class="token number">2.1</span>.0 pytorch-cuda<span class="token operator">=</span><span class="token number">11.8</span> <span class="token parameter variable">-c</span> pytorch <span class="token parameter variable">-c</span> nvidia 
 
-conda install pyg -c pyg 
+conda <span class="token function">install</span> pyg <span class="token parameter variable">-c</span> pyg 
 
-conda install -c dglteam&#x2F;label&#x2F;th21_cu118 dgl 
+conda <span class="token function">install</span> <span class="token parameter variable">-c</span> dglteam/label/th21_cu118 dgl 
 
-pip install pyyaml 
+pip <span class="token function">install</span> pyyaml 
 
-pip install cdlib -i [https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple&#x2F;](https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple&#x2F;) 
+pip <span class="token function">install</span> cdlib <span class="token parameter variable">-i</span> <span class="token punctuation">[</span>https://mirrors.aliyun.com/pypi/simple/<span class="token punctuation">]</span><span class="token punctuation">(</span>https://mirrors.aliyun.com/pypi/simple/<span class="token punctuation">)</span> 
 
-pip install munkres<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+pip <span class="token function">install</span> munkres<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>小插曲：</strong> 一开始想要更换显卡驱动，在docker的自己的分区删除了所有nvidia*，但在重新安装驱动的时候出现报错，怀疑是只是把自己的分区内的nvidia驱动删除了，导致删除不彻底，导致nvidia-smi都无法运行。</p>
 <p>之后又尝试在服务器图形操作界面更换驱动，并重启，结果导致服务器黑屏，原因是已经进入了ubuntu系统，只是没法加载图形化界面，因为NVIDIA 显卡驱动带来的一系列和ubuntu系统的 GNOME、LightDM 等桌面环境不适配、不兼容。</p>
 <p>然而虽然图形界面没法打开，但是系统是已经开机了，只是docker没有启动，无法用ssh连接到分区的用户名ip</p>
@@ -964,32 +964,51 @@ pip install munkres<span aria-hidden="true" class="line-numbers-rows"><span></sp
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2025-01-03-test.html">
+                <a href="/2024-12-25-jian-zhan-ji-lu.html">
                     <div class="card-image">
                         
+                        <img src="/../images/post_img/building_record/hexo_github.png" class="responsive-img" alt="建站记录">
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
-                        
-                        <span class="card-title">test</span>
+                        <span class="card-title">建站记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            基于Hexo（Matery主题）+ git构建个人博客的基本过程
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-25
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            hj_liang
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
+                                </a>
+                            
+                            <a href="/categories/hexo/Matery/" class="post-category">
+                                    Matery
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/Matery/">
+                        <span class="chip bg-color">Matery</span>
+                    </a>
+                    
                 </div>
                 
             </div>
