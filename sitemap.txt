@@ -8,11 +8,11 @@ https://callous-thumber.github.io/about/index.html
 https://callous-thumber.github.io/tags/index.html
 https://callous-thumber.github.io/categories/index.html
 https://callous-thumber.github.io/
-https://callous-thumber.github.io/tags/%E5%AD%A6%E6%9C%AF/
+https://callous-thumber.github.io/tags/%E7%A7%91%E7%A0%94%E8%AE%B0%E5%BD%95/
 https://callous-thumber.github.io/tags/%E5%B7%A5%E7%A8%8B%E7%BB%8F%E9%AA%8C/
 https://callous-thumber.github.io/tags/hexo/
 https://callous-thumber.github.io/tags/Matery/
-https://callous-thumber.github.io/categories/%E5%AD%A6%E6%9C%AF/
+https://callous-thumber.github.io/categories/%E7%A7%91%E7%A0%94%E8%AE%B0%E5%BD%95/
 https://callous-thumber.github.io/categories/hexo/
-https://callous-thumber.github.io/categories/%E5%AD%A6%E6%9C%AF/%E5%B7%A5%E7%A8%8B%E7%BB%8F%E9%AA%8C/
+https://callous-thumber.github.io/categories/%E7%A7%91%E7%A0%94%E8%AE%B0%E5%BD%95/%E5%B7%A5%E7%A8%8B%E7%BB%8F%E9%AA%8C/
 https://callous-thumber.github.io/categories/hexo/Matery/
